@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Events</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list #slidingList>
+    <ion-item-sliding *ngFor="let event of events; let i = index;">
+      <ion-item>
+        <!-- <ion-avatar slot="start">
+        <img src="/docs/assets/img/avatar-finn.png"></img>
+      </ion-avatar> -->
+        <ion-label>
+          <h2>{{event.title}}</h2>
+          <h3>Price: {{event.price}}₴</h3>
+          <p>31.12 - 01.01</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end" (click)="delete(event, i)">
+        <ion-item-option color="danger">
+            <ion-button type="button" color="danger" >Delete</ion-button>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- <ion-card *ngFor="let event of events">
+    <ion-img src="/assets/myImg.png"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{event.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p></p>
+      <p></p>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
